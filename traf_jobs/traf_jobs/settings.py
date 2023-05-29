@@ -12,6 +12,12 @@ BOT_NAME = "traf_jobs"
 SPIDER_MODULES = ["traf_jobs.spiders"]
 NEWSPIDER_MODULE = "traf_jobs.spiders"
 
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+
+# PLAYWRIGHT_BROWSER_TYPE = "firefox"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "traf_jobs (+http://www.yourdomain.com)"
@@ -31,10 +37,10 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+# COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
-#TELNETCONSOLE_ENABLED = False
+# TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 #DEFAULT_REQUEST_HEADERS = {
@@ -56,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
+# EXTENSIONS = {
 #    "scrapy.extensions.telnet.TelnetConsole": None,
-#}
+# }
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
